@@ -8,6 +8,7 @@
  * CLOSE attention to the arguments and parameters in main()!!!!!!
  */
 
+
 /* MAIN
  * 1. Create an array from a string list
  * 2. Create a 2D array from a 1D array to include number of items and price.
@@ -30,6 +31,11 @@ function main() {
  * @param: list of items, separated by commas
  * @return: itemsArray
  */
+function makeList(items) {
+let itemsArray = items.split(",");
+   console.log(itemsArray.toString());
+   return itemsArray;
+}
 
 
 /* 2. Function addPrices(shoppingList)
@@ -45,7 +51,18 @@ function main() {
  * @param: shoppingList, prices
  * @return: pricesArray
  */
-
+function addPrices(shoppingList,prices){
+   let priceList = prices.split(",");
+   let pricesArray = [];
+   for (let i = 0; i < shoppingList.length; i++) {
+     let itemPrice = [];
+     itemPrice.push(shoppingList[i]);
+     itemPrice.push(priceList[i]);
+     pricesArray.push(itemPrice);
+   }
+   console.log(pricesArray);
+   return pricesArray;
+}
 
 
 /* 3. Function calculateTotal(pricesArray)
@@ -61,4 +78,14 @@ function main() {
  * @param = pricesArray
  * @return = message
  */ 
+ function calculateTotal(pricesarray) {
+   let total = 0
+   let message = [];
+   message  =("Items to buy"
 
+   let price = parseFloat(itemPrice[1]);
+message.push(itemPrice[0] + " : $ " + price);
+total += price;
+      message.push("Total = $" + total .toFixed(2));
+      return message.join("\n");
+   }
