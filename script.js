@@ -55,10 +55,10 @@ function addPrices(shoppingList,prices){
    let priceList = prices.split(",");
    let pricesArray = [];
    for (let i = 0; i < shoppingList.length; i++) {
-     let itemPrice = [];
-     itemPrice.push(shoppingList[i]);
-     itemPrice.push(priceList[i]);
-     pricesArray.push(itemPrice);
+     let itemPrices = [];
+     itemPrices.push(shoppingList[i]);
+     itemPrices.push(priceList[i]);
+     pricesArray.push(itemPrices);
    }
    console.log(pricesArray);
    return pricesArray;
@@ -78,14 +78,15 @@ function addPrices(shoppingList,prices){
  * @param = pricesArray
  * @return = message
  */ 
- function calculateTotal(pricesarray) {
+ function calculateTotal(pricesArray) {
    let total = 0
-   let message = [];
-   message  =("Items to buy"
-
-   let price = parseFloat(itemPrice[1]);
-message.push(itemPrice[0] + " : $ " + price);
-total += price;
+   let message = ["Items to buy: \n"];
+   for (let i = 0; i < pricesArray.length; i++ ){
+      let item = pricesArray[i][0];
+       let price = pricesArray[i][1];
+       message.push(item + " - $ " + prices);
+       total += prices
+     }
       message.push("Total = $" + total .toFixed(2));
       return message.join("\n");
    }
