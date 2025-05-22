@@ -84,9 +84,8 @@ function addPrices(shoppingList,prices){
    for (let i = 0; i < pricesArray.length; i++ ){
       let item = pricesArray[i][0];
        let price = pricesArray[i][1];
-       message.push(item + " - $ " + prices);
-       total += prices
-     }
-      message.push("Total = $" + total .toFixed(2));
+       message.push(item + " : $ " + price);
+   }
+      message.push("Total = $" + total.toFixed(2));
       return message.join("\n");
    }
